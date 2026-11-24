@@ -1,0 +1,29 @@
+/* Printable invoice: A4, ink only, no backgrounds required. */
+@page { size: A4; margin: 16mm; }
+* { box-sizing: border-box; margin: 0; }
+body { font-family: "Instrument Sans", system-ui, sans-serif; font-size: 13px; line-height: 1.5; color: #1e1a16; background: #eae3d8; font-variant-numeric: tabular-nums; }
+.sheet { width: min(100%, 210mm); margin: 24px auto; padding: 18mm 16mm; background: #fff; }
+.toolbar { text-align: center; padding-top: 24px; }
+.toolbar button { font: inherit; font-weight: 600; padding: 10px 20px; border-radius: 999px; border: 0; background: #1e1a16; color: #f4efe7; cursor: pointer; }
+.head { display: flex; justify-content: space-between; gap: 24px; padding-bottom: 18px; border-bottom: 2px solid #1e1a16; }
+.brand { font-family: "Fraunces", Georgia, serif; font-size: 34px; letter-spacing: -0.04em; line-height: 1; margin-bottom: 8px; }
+.brand span { color: #a4471f; }
+.muted, small { color: #625850; }
+h1 { font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 24px; letter-spacing: -0.02em; }
+.right { text-align: right; }
+.parties { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 18px 0; }
+h2 { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #625850; margin-bottom: 4px; }
+table { width: 100%; border-collapse: collapse; }
+.lines th, .lines td { text-align: left; padding: 8px 6px; border-bottom: 1px solid #d9cfc1; vertical-align: top; }
+.lines th { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #625850; border-bottom-color: #1e1a16; }
+.num { text-align: right !important; }
+.sum { width: 50%; margin: 14px 0 0 auto; }
+.sum th, .sum td { padding: 4px 6px; text-align: right; font-weight: 400; }
+.sum th { color: #625850; }
+.sum .grand th, .sum .grand td { border-top: 2px solid #1e1a16; padding-top: 8px; font-weight: 700; font-size: 15px; color: #1e1a16; }
+.foot { margin-top: 32px; padding-top: 12px; border-top: 1px solid #d9cfc1; color: #625850; font-size: 11px; }
+@media print {
+  body { background: none; }
+  .sheet { margin: 0; padding: 0; width: auto; }
+  .no-print { display: none; }
+}

@@ -1,0 +1,102 @@
+/* Maato design tokens. Documented in docs/design-system.md. */
+:root {
+  /* Palette: raw values */
+  --paper: #fbf8f3;
+  --bone: #f4efe7;
+  --oat: #eae3d8;
+  --sand: #d9cfc1;
+  --stone: #b3a796;
+  --ink: #1e1a16;
+  --ink-soft: #3d362f;
+  --ink-muted: #625850;
+  --clay: #a4471f;
+  --clay-deep: #853816;
+  --clay-wash: #f3e1d6;
+
+  --green: #2f6b45;   --green-wash: #e2efe6;
+  --amber: #85570a;   --amber-wash: #f6ebd3;
+  --red: #a3302a;     --red-wash: #f7e1de;
+  --blue: #2d5c7a;    --blue-wash: #e0ebf2;
+
+  /* Palette: roles (use these in components) */
+  --color-bg: var(--bone);
+  --color-surface: var(--paper);
+  --color-sunk: var(--oat);
+  --color-line: var(--sand);
+  --color-line-strong: var(--stone);
+  --color-text: var(--ink);
+  --color-text-soft: var(--ink-soft);
+  --color-text-muted: var(--ink-muted);
+  --color-accent: var(--clay);
+  --color-accent-hover: var(--clay-deep);
+  --color-accent-wash: var(--clay-wash);
+  --color-on-accent: #fff8f2;
+  --color-inverse: var(--ink);
+  --color-on-inverse: #f4efe7;
+  --color-success: var(--green);  --color-success-bg: var(--green-wash);
+  --color-warning: var(--amber);  --color-warning-bg: var(--amber-wash);
+  --color-danger: var(--red);     --color-danger-bg: var(--red-wash);
+  --color-info: var(--blue);      --color-info-bg: var(--blue-wash);
+  --color-backdrop: rgb(30 26 22 / 0.42);
+
+  /* Type */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --text-2xs: 0.6875rem;  /* 11 */
+  --text-xs: 0.75rem;     /* 12 */
+  --text-sm: 0.875rem;    /* 14 */
+  --text-base: 1rem;      /* 16 */
+  --text-md: 1.125rem;    /* 18 */
+  --text-lg: 1.375rem;    /* 22 */
+  --text-xl: 1.75rem;     /* 28 */
+  --text-2xl: clamp(2rem, 1.55rem + 1.6vw, 2.75rem);     /* 32 → 44 */
+  --text-3xl: clamp(2.5rem, 1.7rem + 3vw, 4rem);         /* 40 → 64 */
+  --text-4xl: clamp(3rem, 1.6rem + 5.4vw, 6rem);         /* 48 → 96 */
+
+  --leading-tight: 1.04;
+  --leading-snug: 1.2;
+  --leading-body: 1.6;
+
+  --tracking-display: -0.035em;
+  --tracking-tight: -0.018em;
+  --tracking-caps: 0.12em;
+
+  /* Space (4px base) */
+  --s-1: 0.25rem;  --s-2: 0.5rem;  --s-3: 0.75rem; --s-4: 1rem;
+  --s-5: 1.5rem;   --s-6: 2rem;    --s-7: 3rem;    --s-8: 4rem;
+  --s-9: 6rem;     --s-10: 8rem;
+
+  /* Radius by role, never by whim */
+  --radius-media: 2px;      /* photography: nearly square, editorial */
+  --radius-control: 6px;    /* inputs, selects, quantity steppers */
+  --radius-panel: 14px;     /* dialogs, account cards, admin cards */
+  --radius-pill: 999px;     /* buttons, badges, swatches, chips */
+
+  /* Elevation */
+  --shadow-raised: 0 1px 2px rgb(30 26 22 / 0.05), 0 6px 20px rgb(30 26 22 / 0.06);
+  --shadow-overlay: 0 30px 80px rgb(30 26 22 / 0.24);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 0.8, 0.24, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 140ms;
+  --dur-base: 240ms;
+  --dur-slow: 480ms;
+
+  /* Layout */
+  --container: 1360px;
+  --gutter: clamp(1rem, 0.4rem + 3vw, 2.5rem);
+  --header-h: 4.5rem;
+
+  /* Focus */
+  --focus-ring: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+  }
+}
